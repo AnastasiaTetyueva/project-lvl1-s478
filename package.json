@@ -1,17 +1,31 @@
 {
-  "name": "project1",
-  "version": "1.0.0",
+  "name": "tetyueva1",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+
+  "author": "Anastasia Tetyueva",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3"
+  },
+
+"bin": {
+ "brain-games": "dist/bin/brain-games.js"
+},
+
+"files": [
+    "dist"
+  ],
+
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "NODE_ENV=production npx babel src --out-dir dist --source-maps inline"
   }
 }
