@@ -1,12 +1,11 @@
 {
   "name": "tetyueva1",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "The first project (brain games)",
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "NODE_ENV=production npx babel src --out-dir dist --source-maps inline"
   },
-
   "author": "Anastasia Tetyueva",
   "license": "ISC",
   "devDependencies": {
@@ -15,23 +14,23 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3"
   },
-
   "keywords": [
     "game",
     "question",
     "brain games",
     "brain"
   ],
-
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
-
   "files": [
     "dist"
   ],
-
   "dependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "readline-sync": "^1.4.9"
   }
 }
