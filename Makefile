@@ -8,4 +8,4 @@ publish:
 		npm publish
 
 lint: 
-		npx eslint src/bin
+		npx eslint src/bin/brain-games.js
