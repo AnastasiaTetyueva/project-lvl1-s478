@@ -1,10 +1,7 @@
 language: node_js
 
-node_js:
-- "7"
-
 before_install:
-- npm i -g npx 
+- npm i -g npx eslint-config-airbnb
 
 script:
 - make lint
