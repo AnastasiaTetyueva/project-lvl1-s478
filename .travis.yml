@@ -3,7 +3,7 @@ node_js:
   - "7"
 
 before_install:
-- npm i -g babel-eslint eslint eslint-config-airbnb-base eslint-plugin-import readline-sync
+- npm i -g npx babel-eslint eslint eslint-config-airbnb-base eslint-plugin-import readline-sync
 
 script:
   - make lint
