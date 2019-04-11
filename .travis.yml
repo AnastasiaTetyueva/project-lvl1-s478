@@ -1,8 +1,11 @@
 language: node_js
 
+node_js:
+- "7"
+
 before_install:
 - npm i -g npx babel-eslint eslint eslint-config-airbnb-base eslint-plugin-import
 
 script:
-  - make lint
+- make lint
   
