@@ -7,4 +7,5 @@ start:
 publish: 
 		npm publish
 
-make lint: npx eslint
+make lint: 
+		npx eslint
