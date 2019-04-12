@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import actual from '..';
+import askName from '..';
 
-actual();
+askName();
