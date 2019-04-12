@@ -1,5 +1,5 @@
 1. Eslint. Maintainability Badge
-[Maintainability Badge](https://api.codeclimate.com/v1/badges/{a99a88d28ad37a79dbf6}/maintainability)(https://api.codeclimate.com/v1/badges/{a99a88d28ad37a79dbf6}/maintainability)
+![Maintainability Badge](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)(https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)
 
 2. Eslint. Test Coverage Badge
 [Test Coverage Badge](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)
