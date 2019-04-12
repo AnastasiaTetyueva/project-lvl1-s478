@@ -1,2 +1,8 @@
 /dist/**
 **/node_modules/**
+*.json
+.*
+README.md
+*.yml
+Makefile
+babel.config.js
