@@ -10,22 +10,60 @@ export const askName = (task) => {
     return name;
 }
 
-export const checkEven = () => {
-    const name = actual(`Answer "yes" if number even otherwise answer "no".`);
-    for(let i = 0; i < 3; i++) {
-        let n = Math.ceil(100 * Math.random());
-        console.log(`Question: ${n}`);
-        const answer = readlineSync.question(`Your answer: `).toLowerCase();
-        const nAnswer = answer == 'yes' ? 0 : 1;
-        if(n % 2 == nAnswer) {
-            console.log(`Correct!`); 
-        }
-        else {
-            console.log(`"${answer}" is wrong answer ;(. Correct answer was "${n % 2 == 0 ? 'yes' : 'no'}"`);
+const game = (gameStep) => {
+    const numberOfTries = 3;
+    for(let i = 0; i < numberOfTries; i++) {
+        if(!gameStep()) {
             console.log(`Let is try again, ${name}!`);
             return;
         }
+        console.log(`Congratulations, ${name}!`);
+}
 
-   }
-   console.log(`Congratulations, ${name}!`);
+const isEven = (number) => {
+    if(number % 2 == 0) {
+        return true;
+    }
+    return false;
+}
+
+const evenGameStap = () => {
+    let randomNumber = Math.ceil(100 * Math.random());
+    console.log(`Question: ${randomNumber}`);
+    const answer = readlineSync.question(`Your answer: `).toLowerCase();
+    if(isEven(randomNumber) == (answer == 'yes')){
+        console.log(`Correct!`);
+    }
+    else {
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${isEven(randomNumber) ? "yes" : "no"}"`);
+        return;
+        }
+    }
+}
+
+export const checkEven = () => {
+    askName(`Answer "yes" if number even otherwise answer "no".`);
+    game(evenGameStap);
+}
+
+export const calc = () => {
+    askName(`What is the result of the expression?`);
+    game(calcGameStap);
+}
+
+const isCorrectCalculation = ()
+
+const calcGameStap = () => {
+    let randomNumber = Math.ceil(100 * Math.random());
+    let 
+    console.log(`Question: ${randomExpression}`);
+    const answer = readlineSync.question(`Your answer: `);
+    if(isEven(randomNumber) == (answer == 'yes')){
+        console.log(`Correct!`);
+    }
+    else {
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${isEven(randomNumber) ? "yes" : "no"}"`);
+        return;
+        }
+    }
 }
