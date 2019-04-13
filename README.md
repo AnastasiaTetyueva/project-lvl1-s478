@@ -10,4 +10,5 @@
 4. Пример игры на "Проверка на четность"
 [![asciicast](https://asciinema.org/a/TzJJy9dDR75kouD8TWLwSwb7P.svg)](https://asciinema.org/a/TzJJy9dDR75kouD8TWLwSwb7P)
 
-
+5. Пример игры "Калькулятор"
+[![asciicast](https://asciinema.org/a/j6u1YRUaOAZfUTIMo6kiJDApu.svg)](https://asciinema.org/a/j6u1YRUaOAZfUTIMo6kiJDApu)

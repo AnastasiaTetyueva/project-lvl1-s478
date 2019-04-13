@@ -1,6 +1,6 @@
 {
   "name": "tetyueva1",
-  "version": "1.0.13",
+  "version": "1.0.18",
   "description": "The first project (brain games)",
   "scripts": {
     "prepublishOnly": "npm run build",
@@ -23,7 +23,7 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc"
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"

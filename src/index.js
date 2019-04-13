@@ -10,7 +10,7 @@ export const askName = (task) => {
     return name;
 }
 
-const game = (gameStep) => {
+const game = (name, gameStep) => {
     const numberOfTries = 3;
     for(let i = 0; i < numberOfTries; i++) {
         if(!gameStep()) {
@@ -18,6 +18,7 @@ const game = (gameStep) => {
             return;
         }
         console.log(`Congratulations, ${name}!`);
+    }
 }
 
 const isEven = (number) => {
@@ -27,43 +28,52 @@ const isEven = (number) => {
     return false;
 }
 
-const evenGameStap = () => {
+const evenGameStep = () => {
     let randomNumber = Math.ceil(100 * Math.random());
     console.log(`Question: ${randomNumber}`);
     const answer = readlineSync.question(`Your answer: `).toLowerCase();
     if(isEven(randomNumber) == (answer == 'yes')){
         console.log(`Correct!`);
+        return true;
     }
     else {
         console.log(`"${answer}" is wrong answer ;(. Correct answer was "${isEven(randomNumber) ? "yes" : "no"}"`);
-        return;
+        return false;
         }
-    }
 }
 
 export const checkEven = () => {
-    askName(`Answer "yes" if number even otherwise answer "no".`);
-    game(evenGameStap);
+    let name = askName(`Answer "yes" if number even otherwise answer "no".`);
+    game(name, evenGameStep);
 }
 
 export const calc = () => {
-    askName(`What is the result of the expression?`);
-    game(calcGameStap);
+    let name = askName(`What is the result of the expression?`);
+    game(name, calcGameStep);
 }
 
-const isCorrectCalculation = ()
-
-const calcGameStap = () => {
-    let randomNumber = Math.ceil(100 * Math.random());
-    let 
-    console.log(`Question: ${randomExpression}`);
-    const answer = readlineSync.question(`Your answer: `);
-    if(isEven(randomNumber) == (answer == 'yes')){
+const calcGameStep = () => {
+    let number1 = Math.ceil(100 * Math.random());
+    let number2 = Math.ceil(100 * Math.random());
+    let operation = Math.floor(3 * Math.random());
+    console.log(`Question: ${number1} ${["+","-","*"][operation]} ${number2}`);
+    const answer = parseInt(readlineSync.question(`Your answer: `));
+    let decision = 0;
+    if(operation == 0) {
+        decision = number1 + number2;
+    }
+    if(operation == 1) {
+        decision = number1 - number2;
+    }
+    if(operation == 2) {
+        decision = number1 * number2;
+    }
+    if(decision == answer){
         console.log(`Correct!`);
+        return true;
     }
     else {
-        console.log(`"${answer}" is wrong answer ;(. Correct answer was "${isEven(randomNumber) ? "yes" : "no"}"`);
-        return;
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was ${decision}`);
+        return false;
         }
-    }
 }
