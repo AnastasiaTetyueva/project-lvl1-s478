@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { checkEven }  from '..';
+import { checkEven }  from '../games/module-even';
 
 checkEven();
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { askName } from '..';
+import { game } from '..'
 
-askName();
+game(null, null);
