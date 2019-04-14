@@ -3,7 +3,8 @@ node_js:
   - "node"
 
 before_install:
-- npm i -g npm npx eslint-config-airbnb
+- npm i -g npm npx
+- npm i
 
 script:
 - make lint
