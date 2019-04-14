@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { game } from '..';
+import executeGame from '..';
 
-game(null, null);
+executeGame(null, null);

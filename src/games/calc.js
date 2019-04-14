@@ -1,15 +1,17 @@
-import readlineSync from 'readline-sync';
-import { game, randomNumber } from '..';
+import executeGame from '..';
+import randomNumber from '../utils';
 
-export const calcGameStep = () => {
+const gameRules = 'What is the result of the expression?';
+
+const calcStep = (showQuestion, expectUserInput) => {
   const operators = ['+', '-', '*'];
   const range = 100;
   const number1 = randomNumber(1, range);
   const number2 = randomNumber(1, range);
   const operation = randomNumber(0, operators.length);
   const sign = operators[operation];
-  console.log(`Question: ${number1} ${sign} ${number2}`);
-  const answer = parseInt(readlineSync.question('Your answer: '), 10);
+  showQuestion(`${number1} ${sign} ${number2}`);
+  const answer = parseInt(expectUserInput(), 10);
   let decision = 0;
   switch (sign) {
     case '+':
@@ -25,13 +27,11 @@ export const calcGameStep = () => {
       break;
   }
   if (decision === answer) {
-    console.log('Correct!');
     return [true];
   }
-
   return [false, answer, decision];
 };
 
-export const calc = () => {
-  game('What is the result of the expression?', calcGameStep);
+export default () => {
+  executeGame(gameRules, calcStep);
 };

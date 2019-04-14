@@ -1,6 +1,7 @@
-import readlineSync from 'readline-sync';
-import { game, randomNumber } from '..';
+import executeGame from '..';
+import randomNumber from '../utils';
 
+const gameRules = 'Find the greatest common divisor of given numbers.';
 const computeGcd = (first, second) => {
   let a = Math.abs(first);
   let b = Math.abs(second);
@@ -15,20 +16,18 @@ const computeGcd = (first, second) => {
   }
 };
 
-export const findGcdGameStep = () => {
+export const findGcdStep = (showQuestion, expectUserInput) => {
   const range = 100;
   const number1 = randomNumber(1, range);
   const number2 = randomNumber(1, range);
-  console.log(`Question: ${number1} ${number2}`);
-  const answer = parseInt(readlineSync.question('Your answer: '), 10);
+  showQuestion(`${number1} ${number2}`);
+  const answer = parseInt(expectUserInput(), 10);
   if (computeGcd(number1, number2) === answer) {
-    console.log('Correct!');
     return [true];
   }
-
   return [false, answer, computeGcd(number1, number2)];
 };
 
-export const findGcd = () => {
-  game('Find the greatest common divisor of given numbers.', findGcdGameStep);
+export default () => {
+  executeGame(gameRules, findGcdStep);
 };

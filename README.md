@@ -18,3 +18,6 @@
 
 7. Пример игры "Прогрессия"
 [![asciicast](https://asciinema.org/a/En2vVgRi0WLSOzr57xzhU2xaE.svg)](https://asciinema.org/a/En2vVgRi0WLSOzr57xzhU2xaE)
+
+8. Пример игры "Простое число"
+[![asciicast](https://asciinema.org/a/c5k1Ef62UzZHz0pKJVdN4ziDt.svg)](https://asciinema.org/a/c5k1Ef62UzZHz0pKJVdN4ziDt)
