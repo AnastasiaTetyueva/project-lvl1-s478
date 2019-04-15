@@ -1,30 +1,26 @@
 import executeGame from '..';
 import randomNumber from '../utils';
 
-const gameRules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const performProgression = (showQuestion, expectUserInput) => {
+const progressionLength = 10;
+
+const generateProgressionTask = () => {
   const start = randomNumber(1, 100);
   const step = randomNumber(1, 10);
-  const skipIndex = randomNumber(0, 9);
-  const skipValue = start + step * skipIndex;
-  const progressionLength = 10;
-  let progressionString = '';
+  const skippedIndex = randomNumber(0, 9);
+  const decision = start + step * skippedIndex;
+  let progressionText = '';
   for (let i = 0; i < progressionLength; i += 1) {
-    if (i === skipIndex) {
-      progressionString = `${progressionString}.. `;
+    if (i === skippedIndex) {
+      progressionText = `${progressionText}.. `;
     } else {
-      progressionString = `${progressionString + (start + step * i)} `;
+      progressionText = `${progressionText + (start + step * i)} `;
     }
   }
-  showQuestion(progressionString);
-  const answer = parseInt(expectUserInput(), 10);
-  if (skipValue === answer) {
-    return [true];
-  }
-  return [false, answer, skipValue];
+  return [progressionText, decision.toString()];
 };
 
 export default () => {
-  executeGame(gameRules, performProgression);
+  executeGame(description, generateProgressionTask);
 };

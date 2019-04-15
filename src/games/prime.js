@@ -1,16 +1,16 @@
 import executeGame from '..';
 import randomNumber from '../utils';
 
-const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (n) => {
-  if (n === 1) {
+  if (n <= 1) {
     return false;
   }
   if (n === 2) {
     return true;
   }
-  for (let x = 2; x < n; x += 1) {
+  for (let x = 2; x <= n / 2; x += 1) {
     if (n % x === 0) {
       return false;
     }
@@ -18,17 +18,13 @@ const isPrime = (n) => {
   return true;
 };
 
-const primeStep = (showQuestion, expectUserInput) => {
-  const range = 100;
-  const number = randomNumber(1, range);
-  showQuestion(number);
-  const answer = parseInt(expectUserInput(), 10);
-  if (isPrime(number) === (answer === 'yes')) {
-    return [true];
-  }
-  return [false, answer, isPrime(number) ? 'yes' : 'no'];
+const rangeNumber = 100;
+
+const generatePrimeTask = () => {
+  const question = randomNumber(1, rangeNumber);
+  return [question, isPrime(question) ? 'yes' : 'no'];
 };
 
 export default () => {
-  executeGame(gameRules, primeStep);
+  executeGame(description, generatePrimeTask);
 };
