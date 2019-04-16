@@ -12,6 +12,7 @@ const generateCalcTask = () => {
   const operation = randomNumber(0, operators.length);
   const sign = operators[operation];
   let decision = 0;
+  const fullQuestion = `${question1} ${sign} ${question2}`;
   switch (sign) {
     case '+':
       decision = question1 + question2;
@@ -25,7 +26,7 @@ const generateCalcTask = () => {
     default:
       break;
   }
-  return [`${question1} ${sign} ${question2}`, decision.toString()];
+  return [fullQuestion, decision.toString()];
 };
 
 export default () => {

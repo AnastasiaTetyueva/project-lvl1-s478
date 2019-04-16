@@ -18,7 +18,9 @@ const rangeNumber = 100;
 export const generateGcdTask = () => {
   const question1 = randomNumber(1, rangeNumber);
   const question2 = randomNumber(1, rangeNumber);
-  return [`${question1} ${question2}`, computeGcd(question1, question2).toString()];
+  const fullQuestion = `${question1} ${question2}`;
+  const fullAnswer = computeGcd(question1, question2);
+  return [fullQuestion, fullAnswer.toString()];
 };
 
 export default () => {

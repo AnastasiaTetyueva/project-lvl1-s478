@@ -1,6 +1,6 @@
 {
   "name": "tetyueva1",
-  "version": "1.0.41",
+  "version": "1.0.44",
   "description": "The first project (brain games)",
   "scripts": {
     "prepublishOnly": "npm run build",

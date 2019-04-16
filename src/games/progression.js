@@ -8,17 +8,22 @@ const progressionLength = 10;
 const generateProgressionTask = () => {
   const start = randomNumber(1, 100);
   const step = randomNumber(1, 10);
-  const skippedIndex = randomNumber(0, 9);
+  const skippedIndex = randomNumber(0, progressionLength - 1);
   const decision = start + step * skippedIndex;
-  let progressionText = '';
+  let progression = '';
+  let acc = start;
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === skippedIndex) {
-      progressionText = `${progressionText}.. `;
+      progression = `${progression}..`;
     } else {
-      progressionText = `${progressionText + (start + step * i)} `;
+      progression = `${progression}${acc}`;
     }
+    if (i < progressionLength - 1) {
+      progression = `${progression} `;
+    }
+    acc += step;
   }
-  return [progressionText, decision.toString()];
+  return [progression, decision.toString()];
 };
 
 export default () => {
